@@ -1,0 +1,233 @@
+<!doctype html><html lang="pt-PT"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Pack Mensagens Prontas · Zero Tampas</title><meta name="description" content="50 respostas a stories, 30 primeiras mensagens para apps e 15 para quando a conversa esfria. 4,90 €."><meta name="theme-color" content="#FF2D87"><link rel="icon" href="favicon.png">
+<meta name="robots" content="index,follow">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Caveat:wght@700&display=swap">
+<style>
+/* Layout: noite de arraial — fundo rosa-chiclete, blocos de cor que alternam como luzes de festa, a tampinha riscada como assinatura */
+:root{
+  --ink:#2A0B2D;        /* ameixa profunda: texto */
+  --blush:#FFEAF2;      /* fundo base */
+  --magenta:#FF2D87;    /* desejo */
+  --tangerina:#FF7A2F;  /* calor */
+  --sol:#FFD84A;        /* alegria */
+  --plum:#3E0F45;       /* blocos escuros */
+  --paper:#FFFFFF;
+  --muted:#7A4F7E;
+  --display:"Bricolage Grotesque", "Arial Black", system-ui, sans-serif;
+  --body:"Bricolage Grotesque", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --hand:"Caveat", "Comic Sans MS", cursive;
+  color-scheme: light;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto} *{animation:none!important;transition:none!important}}
+body{margin:0;background:var(--blush);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit}
+.wrap{max-width:1080px;margin:0 auto;padding-inline:20px}
+h1,h2,h3{font-family:var(--display);font-weight:800;line-height:1.02;letter-spacing:-.02em;text-wrap:balance;margin:0}
+h2{font-size:clamp(2rem,5.5vw,3.4rem)}
+p{margin:0}
+.hand{font-family:var(--hand);font-weight:700}
+
+/* barra topo */
+.topbar{background:var(--ink);color:var(--sol);text-align:center;font-weight:600;font-size:14px;padding:9px 16px;letter-spacing:.02em}
+
+/* nav */
+.nav{display:flex;align-items:center;justify-content:space-between;padding-block:18px}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;font-family:var(--display);font-weight:800;font-size:22px;letter-spacing:-.02em}
+.logo svg{width:38px;height:38px;flex:none}
+.nav .mini{font-size:14px;font-weight:600;text-decoration:none;border-bottom:2px solid var(--magenta)}
+
+/* botões */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;background:var(--magenta);color:var(--paper);text-decoration:none;font-family:var(--display);font-weight:800;font-size:20px;padding:18px 28px;border-radius:999px;border:3px solid var(--ink);box-shadow:5px 5px 0 var(--ink);transition:transform .12s, box-shadow .12s}
+.btn:hover{transform:translate(-2px,-2px);box-shadow:7px 7px 0 var(--ink)}
+.btn:active{transform:translate(3px,3px);box-shadow:2px 2px 0 var(--ink)}
+.btn:focus-visible{outline:3px solid var(--sol);outline-offset:3px}
+.btn .price{white-space:nowrap;background:var(--sol);color:var(--ink);border-radius:999px;padding:3px 12px;font-size:17px}
+.pay{display:flex;flex-wrap:wrap;gap:8px 16px;font-size:14px;font-weight:600;color:var(--muted);margin-top:16px}
+.pay span::before{content:"✓ ";color:var(--magenta)}
+
+/* hero */
+.hero{display:grid;grid-template-columns:1.15fr .85fr;gap:40px;align-items:center;padding-block:28px 64px}
+.hero > *{min-width:0}
+.eyebrow{display:inline-block;background:var(--sol);border:2px solid var(--ink);border-radius:999px;font-weight:600;font-size:14px;padding:5px 14px;margin-bottom:20px;transform:rotate(-1.5deg)}
+.hero h1{font-size:clamp(3.1rem,9vw,6.4rem);letter-spacing:-.035em}
+.hero h1 .strike{position:relative;white-space:nowrap}
+.hero h1 .strike::after{content:"";position:absolute;left:-4%;right:-4%;top:52%;height:.12em;background:var(--magenta);transform:rotate(-4deg);border-radius:4px}
+.hero h1 .kiss{color:var(--magenta)}
+.hero .lead{font-size:clamp(1.1rem,2.2vw,1.3rem);margin:22px 0 30px;max-width:34ch}
+.hero .note{position:relative;display:inline-block;color:var(--tangerina);font-size:28px;transform:rotate(-3deg);margin-left:6px}
+
+/* mockup do livro */
+.stage{position:relative;aspect-ratio:4/5;max-width:420px;width:100%;justify-self:center}
+.book{position:absolute;inset:6% 10% 4% 8%;background:var(--magenta);border:3px solid var(--ink);border-radius:8px 16px 16px 8px;box-shadow:12px 12px 0 var(--ink);transform:rotate(3deg);display:flex;flex-direction:column;justify-content:space-between;padding:26px 24px;color:var(--paper);overflow:hidden}
+.book::before{content:"";position:absolute;left:0;top:0;bottom:0;width:14px;background:rgba(42,11,45,.25)}
+.book .bk-top{font-size:13px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--sol)}
+.book .bk-title{font-family:var(--display);font-weight:800;font-size:clamp(2.6rem,7vw,3.6rem);line-height:.88;letter-spacing:-.03em}
+.book .bk-sub{font-size:15px;font-weight:600;max-width:20ch}
+.book .bk-cap{position:absolute;right:-26px;top:-26px;width:110px;height:110px}
+.sticker{position:absolute;border:3px solid var(--ink);font-family:var(--display);font-weight:800;box-shadow:4px 4px 0 var(--ink)}
+.s1{top:0;left:-4%;background:var(--sol);border-radius:999px;padding:8px 16px;font-size:15px;transform:rotate(-8deg)}
+.s2{bottom:-2%;left:-8%;background:var(--paper);border-radius:18px 18px 18px 4px;padding:10px 14px;font-size:15px;font-weight:600;font-family:var(--body);max-width:62%;transform:rotate(-3deg)}
+.s3{top:44%;right:-6%;background:var(--tangerina);color:var(--paper);border-radius:50%;width:84px;height:84px;display:grid;place-items:center;text-align:center;font-size:14px;line-height:1.05;transform:rotate(10deg)}
+@media (prefers-reduced-motion: no-preference){
+  .s1{animation:bob 4s ease-in-out infinite}
+  .s3{animation:bob 4.6s ease-in-out .6s infinite}
+}
+@keyframes bob{50%{translate:0 -8px}}
+
+/* faixa */
+.ticker{background:var(--sol);border-block:3px solid var(--ink);overflow:hidden;white-space:nowrap}
+.ticker div{display:inline-block;padding-block:12px;font-family:var(--display);font-weight:800;font-size:20px}
+@media (prefers-reduced-motion: no-preference){.ticker div{animation:slide 30s linear infinite}}
+@keyframes slide{to{transform:translateX(-50%)}}
+
+/* secções */
+section{padding-block:72px}
+.sec-head{display:flex;flex-direction:column;gap:12px;margin-bottom:36px;max-width:720px}
+.sec-head p{font-size:18px;color:var(--muted)}
+
+/* dores em bolhas */
+.bubbles{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+.bubble{background:var(--paper);border:3px solid var(--ink);border-radius:24px 24px 24px 6px;padding:22px 24px;font-size:19px;font-weight:600;line-height:1.35}
+.bubble:nth-child(even){border-radius:24px 24px 6px 24px;background:var(--ink);color:var(--blush)}
+.bubble small{display:block;margin-top:10px;font-size:14px;font-weight:400;opacity:.75}
+
+/* foleiro vs fixe */
+.vs{background:var(--plum);color:var(--blush)}
+.vs h2{color:var(--paper)}
+.vs .sec-head p{color:#E9C7EA}
+.cols{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}
+.col{border:3px solid var(--blush);border-radius:20px;padding:26px}
+.col h3{font-size:26px;margin-bottom:16px;display:flex;align-items:center;gap:10px}
+.col ul{list-style:none;margin:0;padding:0;display:grid;gap:12px}
+.col li{font-size:18px;line-height:1.4}
+.col.bad li{text-decoration:line-through;text-decoration-color:var(--magenta);text-decoration-thickness:3px;opacity:.85}
+.col.good{background:var(--sol);color:var(--ink);border-color:var(--sol)}
+.tag{font-family:var(--body);font-size:13px;font-weight:600;padding:3px 10px;border-radius:999px;letter-spacing:.04em;text-transform:uppercase}
+.bad .tag{background:var(--magenta);color:var(--paper)}
+.good .tag{background:var(--ink);color:var(--sol)}
+
+/* o que recebes */
+.items{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+.item{background:var(--paper);border:3px solid var(--ink);border-radius:20px;padding:24px;display:grid;grid-template-columns:auto 1fr;gap:18px;align-items:start}
+.item .ic{width:58px;height:58px;border-radius:16px;border:3px solid var(--ink);display:grid;place-items:center;font-family:var(--display);font-weight:800;font-size:24px}
+.item:nth-child(1) .ic{background:var(--magenta);color:var(--paper)}
+.item:nth-child(2) .ic{background:var(--sol)}
+.item:nth-child(3) .ic{background:var(--tangerina);color:var(--paper)}
+.item:nth-child(4) .ic{background:var(--ink);color:var(--sol)}
+.item h3{font-size:22px;margin-bottom:6px}
+.item p{font-size:16px;color:var(--muted)}
+.item .val{display:inline-block;margin-top:10px;font-size:14px;font-weight:600;color:var(--ink);background:var(--blush);border-radius:999px;padding:3px 10px}
+.item.bonus{border-style:dashed}
+
+/* capítulos */
+.chapters{counter-reset:c;display:grid;gap:0;border-top:3px solid var(--ink)}
+.chap{display:grid;grid-template-columns:72px 1fr;gap:16px;align-items:baseline;padding-block:18px;border-bottom:3px solid var(--ink)}
+.chap .n{font-family:var(--display);font-weight:800;font-size:40px;color:var(--magenta);line-height:1}
+.chap h3{font-size:24px}
+.chap p{color:var(--muted);font-size:16px;margin-top:4px}
+
+/* respeito */
+.respect{background:var(--magenta);color:var(--paper)}
+.respect .inner{display:grid;grid-template-columns:auto 1fr;gap:36px;align-items:center}
+.respect svg{width:140px;height:140px}
+.respect h2{margin-bottom:14px}
+.respect p{font-size:19px;max-width:56ch}
+
+/* para quem */
+.fit{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}
+.fit > div{background:var(--paper);border:3px solid var(--ink);border-radius:20px;padding:26px}
+.fit h3{font-size:24px;margin-bottom:14px}
+.fit ul{margin:0;padding-left:20px;display:grid;gap:8px}
+.fit .no{background:transparent;border-style:dashed}
+
+/* oferta */
+.offer{background:var(--tangerina)}
+.card{max-width:640px;margin:0 auto;background:var(--paper);border:3px solid var(--ink);border-radius:28px;box-shadow:12px 12px 0 var(--ink);padding:36px clamp(20px,5vw,44px);text-align:center;position:relative}
+.card .ribbon{position:absolute;top:-20px;left:50%;transform:translateX(-50%) rotate(-2deg);background:var(--sol);border:3px solid var(--ink);border-radius:999px;padding:6px 18px;font-weight:800;font-family:var(--display);white-space:nowrap}
+.card h2{font-size:clamp(1.8rem,4.5vw,2.6rem);margin-top:10px}
+.list{list-style:none;padding:0;margin:24px 0;display:grid;gap:10px;text-align:left}
+.list li{display:flex;justify-content:space-between;gap:12px;border-bottom:2px dotted #E5C9D6;padding-bottom:10px;font-weight:600}
+.list li span:last-child{color:var(--muted);font-weight:400;white-space:nowrap;text-decoration:line-through}
+.priceline{display:flex;align-items:baseline;justify-content:center;gap:14px;margin:6px 0 4px;flex-wrap:wrap}
+.priceline .old{font-size:22px;color:var(--muted);text-decoration:line-through}
+.priceline .now{font-family:var(--display);font-weight:800;font-size:clamp(3.6rem,10vw,5rem);color:var(--magenta);letter-spacing:-.03em;line-height:1}
+.card .once{font-weight:600;margin-bottom:22px}
+.card .btn{width:100%}
+.card .pay{justify-content:center}
+.guarantee{display:flex;gap:16px;align-items:center;text-align:left;margin-top:26px;padding-top:22px;border-top:3px solid var(--ink)}
+.guarantee .seal{flex:none;width:76px;height:76px;border-radius:50%;background:var(--sol);border:3px solid var(--ink);display:grid;place-items:center;font-family:var(--display);font-weight:800;line-height:1;text-align:center;font-size:13px}
+.guarantee .seal b{font-size:28px;display:block}
+.guarantee p{font-size:15px}
+
+/* faq */
+.faq{display:grid;gap:12px;max-width:780px}
+details{background:var(--paper);border:3px solid var(--ink);border-radius:18px;padding:18px 22px}
+summary{cursor:pointer;font-family:var(--display);font-weight:800;font-size:20px;list-style:none;display:flex;justify-content:space-between;gap:12px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";color:var(--magenta);font-size:28px;line-height:1}
+details[open] summary::after{content:"–"}
+details p{margin-top:12px;color:var(--muted)}
+summary:focus-visible{outline:3px solid var(--magenta);outline-offset:4px;border-radius:6px}
+
+/* final */
+.final{text-align:center}
+.final h2{font-size:clamp(2.4rem,7vw,4.6rem);margin-bottom:24px}
+footer{background:var(--ink);color:#D9B8DC;font-size:13px;padding-block:32px}
+footer .wrap{display:grid;gap:10px}
+
+/* barra fixa mobile */
+.sticky{display:none}
+
+@media (max-width:820px){
+  .hero{grid-template-columns:1fr;padding-block:8px 48px;gap:28px}
+  .stage{max-width:320px}
+  .bubbles,.cols,.items,.fit{grid-template-columns:1fr}
+  .respect .inner{grid-template-columns:1fr;gap:20px}
+  .respect svg{width:100px;height:100px}
+  section{padding-block:56px}
+  .nav .mini{display:none}
+  .sticky{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:20;gap:12px;align-items:center;justify-content:space-between;background:var(--ink);color:var(--paper);padding:10px 16px calc(10px + env(safe-area-inset-bottom,0px))}
+  .sticky b{font-family:var(--display);font-size:20px;color:var(--sol)}
+  .sticky small{display:block;font-size:12px;opacity:.8}
+  .sticky .btn{font-size:16px;padding:12px 18px;box-shadow:3px 3px 0 var(--magenta);border-color:var(--paper)}
+  footer{padding-bottom:110px}
+  .s2{left:-2%}
+  .btn{font-size:18px;padding:16px 22px}
+}
+</style><style>
+.mini-hero{padding:56px 0 36px}
+.mini-hero h1{font-size:clamp(38px,8vw,72px);margin-top:16px}
+.box{background:#fff;border:3px solid var(--ink);border-radius:22px;padding:24px;box-shadow:8px 8px 0 var(--ink);margin:22px 0}
+.box ul{margin:10px 0 0;padding-left:20px}
+.box li{margin:6px 0}
+.price2{display:flex;gap:14px;align-items:baseline;margin:14px 0}
+.price2 .old{text-decoration:line-through;opacity:.6;font-size:22px}
+.price2 .now{font-size:44px;font-weight:800;color:var(--magenta)}
+.tag{display:inline-block;background:var(--sol);border:2px solid var(--ink);border-radius:99px;padding:6px 14px;font-weight:800;font-size:14px}
+.skip{display:block;text-align:center;margin:18px auto 0;color:var(--muted);font-size:15px}
+.legal2{text-align:center;font-size:13px;color:var(--muted);padding:30px 16px 60px}
+.legal2 a{color:var(--muted)}
+</style></head><body>
+<main class="wrap">
+<section class="mini-hero">
+<span class="tag">Extra do Zero Tampas</span>
+<h1>Pack Mensagens<br><span style="color:var(--magenta)">Prontas</span></h1>
+<p class="lede" style="font-size:20px;max-width:640px">Para nunca mais ficares a olhar para um story sem saber o que escrever. Copia a ideia, troca os detalhes e envia.</p>
+<div class="box">
+<b>O que recebes</b>
+<ul>
+<li><b>50 respostas a stories</b>, organizadas por tipo: café, praia, ginásio, festa, comida, viagem, animais, séries, paisagens e selfies</li>
+<li><b>30 primeiras mensagens</b> para Tinder, Bumble e Hinge, conforme o que está no perfil dela</li>
+<li><b>10 mensagens para reanimar</b> uma conversa que esfriou</li>
+<li><b>5 formas de passar ao café</b> sem parecer forçado</li>
+</ul>
+<p style="margin-top:14px">Tudo em português de Portugal, com humor e respeito. Nada de comentários sobre o corpo de ninguém.</p>
+</div>
+<div class="price2"><span class="now">4,90 €</span></div>
+<a class="btn" href="https://pay.hotmart.com/U108063497R">Quero o Pack Mensagens Prontas</a>
+<p style="margin-top:12px;color:var(--muted)">PDF de 13 páginas · acesso imediato por email · garantia de 15 dias</p>
+</section>
+</main><p class="legal2">Pagamento seguro com cartão de crédito, processado pela Hotmart · Garantia de 15 dias<br><a href="privacidade.html">Privacidade</a> · <a href="termos.html">Termos e reembolsos</a> · <a href="https://www.livroreclamacoes.pt" target="_blank" rel="noopener">Livro de Reclamações</a><br>Este site não faz parte do Facebook nem da Meta Platforms, Inc. · © 2026 Zero Tampas</p></body></html>
