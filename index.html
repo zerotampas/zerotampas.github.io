@@ -538,6 +538,26 @@ footer .legal a{color:var(--blush);opacity:.85}
 </script>
 
 <script>
+/* Diagnóstico do funil: até onde as pessoas leem a página (aparece no Gestor de Eventos do pixel). */
+(function(){
+  if (!window.fbq) return;
+  var marks=[25,50,75,90], sent={}, t0=Date.now();
+  function onScroll(){
+    var H=document.documentElement.scrollHeight-innerHeight; if(H<=0) return;
+    var pct=Math.round(scrollY/H*100);
+    marks.forEach(function(m){
+      if(pct>=m && !sent[m]){ sent[m]=1;
+        fbq('trackCustom','ZT_Scroll',{pct:m,seg:Math.round((Date.now()-t0)/1000)});
+        if(m===50) fbq('track','ViewContent',{content_name:'Zero Tampas',value:(window.ZT_PRECO||14.90),currency:'EUR'});
+      }
+    });
+  }
+  addEventListener('scroll',onScroll,{passive:true});
+  setTimeout(function(){ fbq('trackCustom','ZT_Tempo20s'); },20000);
+})();
+</script>
+
+<script>
 /* Prazo real do preço de lançamento: domingo 1/11/2026 às 23:59 (Lisboa = UTC nesta data). Depois disto o preço passa a 19,90 € também na Hotmart. */
 (function(){
   var DL = Date.parse('2026-11-01T23:59:00Z');
