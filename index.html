@@ -70,6 +70,8 @@ p{margin:0}
 .btn .price{white-space:nowrap;background:var(--sol);color:var(--ink);border-radius:999px;padding:3px 12px;font-size:17px}
 .pay{display:flex;flex-wrap:wrap;gap:8px 16px;font-size:14px;font-weight:600;color:var(--muted);margin-top:16px}
 .pay span::before{content:"✓ ";color:var(--magenta)}
+.inc{margin:12px 0 0;font-size:14px;line-height:1.45;color:var(--muted);max-width:520px}
+.inc b{color:var(--ink)}
 
 /* hero */
 .hero{display:grid;grid-template-columns:1.15fr .85fr;gap:40px;align-items:center;padding-block:28px 64px}
@@ -289,6 +291,7 @@ footer .legal a{color:var(--blush);opacity:.85}
       <p class="lead">Fica no «visto». Responde antes com algo que dá conversa. O guia traz 101 deixas para stories, apps, café e ginásio, em português de Portugal, com humor e com respeito.</p>
       <a class="btn" href="#oferta">Quero o Zero Tampas <span class="price pp">14,90 €</span></a>
       <div class="pay"><span>Cartão ou PayPal</span><span>Acesso imediato</span><span>Garantia de 15 dias</span></div>
+      <p class="inc"><b>Inclui:</b> Guia de 7 capítulos · 101 deixas · Desafio 7 Dias · 2 bónus (Instagram e Apps, Do Visto à Conversa)</p>
     </div>
 
     <div class="stage" aria-label="Capa do guia Zero Tampas">
@@ -464,7 +467,7 @@ footer .legal a{color:var(--blush);opacity:.85}
 <section class="offer" id="oferta">
   <div class="wrap">
     <div class="card">
-      <span class="ribbon">Preço de lançamento</span>
+      <span class="ribbon">Tudo incluído</span>
       <h2>Leva tudo hoje</h2>
       <ul class="list">
         <li><span>O Guia Zero Tampas (7 capítulos)</span><span>19 €</span></li>
@@ -534,7 +537,8 @@ footer .legal a{color:var(--blush);opacity:.85}
   var qs = (url.indexOf('?')<0?'?':'&') + p.toString();
   document.querySelectorAll('a.btn').forEach(function(a){
     a.href = url + qs;
-    a.addEventListener('click', function(){ if (window.fbq) fbq('track','InitiateCheckout',{value:(window.ZT_PRECO||14.90),currency:'EUR'}); });
+    var pos = a.closest('.hero')?'Topo':a.closest('.sticky')?'Fixo':a.closest('#oferta')?'Oferta':a.closest('.final')?'Final':'Meio';
+    a.addEventListener('click', function(){ if (window.fbq){ fbq('track','InitiateCheckout',{value:(window.ZT_PRECO||14.90),currency:'EUR'}); fbq('trackCustom','ZT_Clique'+pos); } });
   });
 })();
 </script>
@@ -550,6 +554,7 @@ footer .legal a{color:var(--blush);opacity:.85}
     marks.forEach(function(m){
       if(pct>=m && !sent[m]){ sent[m]=1;
         fbq('trackCustom','ZT_Scroll',{pct:m,seg:Math.round((Date.now()-t0)/1000)});
+        fbq('trackCustom','ZT_Leu'+m);
         if(m===50) fbq('track','ViewContent',{content_name:'Zero Tampas',value:(window.ZT_PRECO||14.90),currency:'EUR'});
       }
     });
