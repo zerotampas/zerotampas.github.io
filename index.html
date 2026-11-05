@@ -23,7 +23,8 @@ window.ZT_CHECKOUT = "https://pay.hotmart.com/B108059714W?checkoutMode=10";   /*
 window.ZT_PIXEL = "1709237104544268";      /* ID do Pixel da Meta; vazio = sem pixel */
 if (window.ZT_PIXEL) {
   !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
-  fbq('init', window.ZT_PIXEL); fbq('track', 'PageView');
+  window.zid=function(){return 'zt'+Date.now().toString(36)+Math.random().toString(36).slice(2,8)};
+  fbq('init', window.ZT_PIXEL); fbq('track', 'PageView', {}, {eventID:zid()});
 }
 </script>
 <style>
@@ -539,7 +540,7 @@ footer .legal a{color:var(--blush);opacity:.85}
   document.querySelectorAll('a.btn').forEach(function(a){
     a.href = url + qs;
     var pos = a.closest('.hero')?'Topo':a.closest('.sticky')?'Fixo':a.closest('#oferta')?'Oferta':a.closest('.final')?'Final':'Meio';
-    a.addEventListener('click', function(){ if (window.fbq){ fbq('track','InitiateCheckout',{value:(window.ZT_PRECO||14.90),currency:'EUR'}); fbq('trackCustom','ZT_Clique'+pos); } });
+    a.addEventListener('click', function(){ if (window.fbq){ fbq('track','AddToCart',{value:(window.ZT_PRECO||14.90),currency:'EUR',content_name:'Zero Tampas',content_ids:['8744682'],content_type:'product'},{eventID:zid()}); fbq('trackCustom','ZT_Clique'+pos,{},{eventID:zid()}); } });
   });
 })();
 </script>
@@ -554,14 +555,14 @@ footer .legal a{color:var(--blush);opacity:.85}
     var pct=Math.round(scrollY/H*100);
     marks.forEach(function(m){
       if(pct>=m && !sent[m]){ sent[m]=1;
-        fbq('trackCustom','ZT_Scroll',{pct:m,seg:Math.round((Date.now()-t0)/1000)});
-        fbq('trackCustom','ZT_Leu'+m);
-        if(m===50) fbq('track','ViewContent',{content_name:'Zero Tampas',value:(window.ZT_PRECO||14.90),currency:'EUR'});
+        fbq('trackCustom','ZT_Scroll',{pct:m,seg:Math.round((Date.now()-t0)/1000)},{eventID:zid()});
+        fbq('trackCustom','ZT_Leu'+m,{},{eventID:zid()});
+        if(m===50) fbq('track','ViewContent',{content_name:'Zero Tampas',content_ids:['8744682'],content_type:'product',value:(window.ZT_PRECO||14.90),currency:'EUR'},{eventID:zid()});
       }
     });
   }
   addEventListener('scroll',onScroll,{passive:true});
-  setTimeout(function(){ fbq('trackCustom','ZT_Tempo20s'); },20000);
+  setTimeout(function(){ fbq('trackCustom','ZT_Tempo20s',{},{eventID:zid()}); },20000);
 })();
 </script>
 
